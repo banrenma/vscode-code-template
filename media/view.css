@@ -1,0 +1,60 @@
+.red{
+    color: red;
+}
+
+.desc_color {
+    color:var(--vscode-button-hoverBackground)
+}
+.flexline {
+    display: flex;
+}
+
+.flexline input {
+    width: 300px;
+    margin-bottom: 10px;
+
+}
+
+.flexline button {
+    margin-bottom: 10px;
+}
+
+
+.active {
+    background: var(--vscode-button-hoverBackground);
+}
+
+.tab {
+    overflow-x: scroll;
+    margin-bottom: 10px;
+    
+}
+
+.tab button {
+    margin-right: 5px;
+}
+
+.input_desc {
+
+}
+.input_desc div {
+    font-weight:500;
+    font-size: medium;
+}
+
+.input_desc input {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.input_desc select {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+
+.template_desc {
+    /* background-color: var(--vscode-textBlockQuote-background); */
+    color: #666;
+}
+
