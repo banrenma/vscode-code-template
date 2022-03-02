@@ -12,6 +12,11 @@
   "activationEvents": [
     "onCommand:codetemplate.newcode"
   ],
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/banrenma/vscode-code-template.git"
+	},
+  "license": "MIT",
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
