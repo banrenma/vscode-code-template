@@ -163,13 +163,16 @@ class CodeTemplate {
         }
     }
     async readTemplateDirByString(path) {
+        if (path === "" || !path) {
+            return [];
+        }
         let dirUri = vscode.Uri.file(path);
         this._dirUri = dirUri;
         let dirs = await vscode.workspace.fs.readDirectory(dirUri);
         let rets = [];
         if (dirs) {
             for (let v of dirs) {
-                if (v[1] === 2) {
+                if (v[1] === 2 && v[0].charAt(0) !== ".") {
                     rets.push(v[0]);
                 }
             }

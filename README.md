@@ -1,70 +1,110 @@
 # codetemplate README
 
-This is the README for your extension "codetemplate". After writing up a brief description, we recommend including the following sections.
+code template for vscode
 
-## Features
+## how to use
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+create code template 
+1. select floder
+![template structure](step1.png)
+2. setting code template floder
+![template structure](step2.png)
+3. run
+![template structure](step3.png)
 
-For example if there is an image subfolder under your extension project workspace:
+## write template
+### template structure
+![template structure](template_floder_structure.png)
 
-\!\[feature X\]\(images/feature-x.png\)
+### template config
+* template
+> create file list
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+* input
+> config custom var
+```json
+[
+    {
+        "name":"base",
+        "template":[
+            {"name":"base.cpp", "type":"file"},
+            {"name":"base.hpp", "type":"file"}
+        ],
+        "desc":"base c++ class",
+        "input":[
+            {
+                "name":"FILE_NAME",
+                "type":"input",
+                "desc":"file name"
+            }
+        ]
+    },
+    {
+        "name":"base_dir",
+        "template":[
+            {"name":"base_dir", "type":"dir"}
+        ],
+        "desc":"base c++ class",
+        "input":[
+            {
+                "name":"FILE_NAME",
+                "type":"input",
+                "desc":"file name"
+            }
+        ]
+    },
+    {
+        "name":"inherit",
+        "template":[
+            {"name":"inherit.cpp", "type":"file"},
+            {"name":"inherit.hpp", "type":"file"}
+        ],
+        "desc":"base c++ class",
+        "input":[
+            {
+                "name":"FILE_NAME",
+                "type":"input",
+                "desc":"file name"
+            },
+            {
+                "name":"PARENT_NAME",
+                "type":"select",
+                "desc":"inherit parent name",
+                "options":["QRef", "QShareRef"]
+            }
+        ]
+    }
+]
+```
 
-## Requirements
+### template code
+cpp example:
+```c++
+__${FILE_NAME}.cpp__
+//
+//  ${FILE_NAME}.cpp
+//  desc
+//
+//  Created by ${AUTHOR} on ${TIME}.
+#include "${FILE_NAME}.hpp"
+NS_Q_BEGIN
+${FILE_NAME}::${FILE_NAME}(){
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+}
 
-## Extension Settings
+${FILE_NAME}::~${FILE_NAME}(){
+    
+}
+NS_Q_END
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+>__ __${FILE_NAME}.cpp__ __ this line will replace create file name, if you don't want to rename file ,just not write
 
-For example:
+### build-in var
+* ${AUTHOR}
+* ${TIME}
 
-This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
 
-## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
 
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
