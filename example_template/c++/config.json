@@ -1,0 +1,58 @@
+[
+    {
+        "name":"base",
+        "template":[
+            {"name":"base.cpp", "type":"file"},
+            {"name":"base.hpp", "type":"file"}
+        ],
+        "desc":"base c++ class",
+        "input":[
+            {
+                "name":"FILE_NAME",
+                "type":"input",
+                "desc":"file name"
+            }
+        ]
+    },
+    {
+        "name":"inherit",
+        "template":[
+            {"name":"inherit.cpp", "type":"file"},
+            {"name":"inherit.hpp", "type":"file"}
+        ],
+        "desc":"base c++ class",
+        "input":[
+            {
+                "name":"FILE_NAME",
+                "type":"input",
+                "desc":"file name"
+            },
+            {
+                "name":"PARENT_NAME",
+                "type":"select",
+                "desc":"inherit parent name",
+                "options":["QRef", "QShareRef"]
+            }
+        ]
+    },
+    {
+        "name":"cmake_project",
+        "template":[
+            {"name":"CMakeProject", "type":"dir"}
+        ],
+        "desc":"simple cmake project",
+        "input":[
+            {
+                "name":"FILE_NAME",
+                "type":"input",
+                "desc":"file name"
+            },
+            {
+                "name":"PRINT_CONTENT",
+                "type":"input",
+                "desc":"hero world",
+                "isOption":true
+            }
+        ]
+    }
+]

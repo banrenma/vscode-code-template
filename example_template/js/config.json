@@ -1,0 +1,21 @@
+[
+    {
+        "name":"base",
+        "template":[
+            {"name":"hello.js", "type":"file"}
+        ],
+        "desc":"js test",
+        "input":[
+            {
+                "name":"FILE_NAME",
+                "type":"input",
+                "desc":"file name"
+            },
+            {
+                "name":"PRINT_CONTENT",
+                "type":"input",
+                "desc":"hero world"
+            }
+        ]
+    }
+]

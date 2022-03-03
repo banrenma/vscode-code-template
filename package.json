@@ -2,7 +2,7 @@
   "name": "codetemplate",
   "displayName": "CodeTemplate",
   "description": "generate code templates",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.64.0"
   },
@@ -23,13 +23,27 @@
     "commands": [
       {
         "command": "codetemplate.newcode",
-        "title": "create code by template"
+        "title": "create code by template", 
+        "icon":"./media/code.svg"
+
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "when": "explorerResourceIsFolder",
+          "command": "codetemplate.newcode",
+          "group": "navigation"
+        }
+      ],
+      "view/title":[
+        {
+          "command": "codetemplate.newcode",
+          "group": "navigation" 
+        }
+      ],
+      "file/newFile":[
+        {
           "command": "codetemplate.newcode",
           "group": "navigation"
         }

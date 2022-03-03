@@ -13,6 +13,8 @@ create code template
 ![template structure](step3.png)
 
 ## write template
+### [template example](https://github.com/banrenma/vscode-code-template/tree/master/example_template)
+
 ### template structure
 ![template structure](template_floder_structure.png)
 

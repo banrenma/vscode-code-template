@@ -30,7 +30,14 @@ export function activate(context: vscode.ExtensionContext) {
 		const columnToShowIn = vscode.window.activeTextEditor
 			? vscode.window.activeTextEditor.viewColumn
 			: undefined;
-
+		
+		if(uri === undefined){
+			let floders = vscode.workspace.workspaceFolders
+			if(floders && floders.length > 0){
+				uri = floders[0].uri
+			}
+		}
+		
 		if (codeTemp) {
 			// If we already have a panel, show it in the target column
 			codeTemp.getPanel()?.reveal(columnToShowIn);
